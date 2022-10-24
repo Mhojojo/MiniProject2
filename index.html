@@ -6,7 +6,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
-    
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
@@ -142,69 +141,129 @@
               Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no.
               Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.
             </p>
-            <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn"data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            <a
+              href=""
+              class="btn btn-primary py-3 px-5 me-3 animated fadeIn"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
               >Get Started</a
             >
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">  
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                  
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
                   </div>
                   <div class="modal-body">
                     <form
-                    id="form"
-                    method="post"
-                    name="form"
-                    onsubmit="return validated()">
-
-                    <h5 class="modal-title">Register here</h5>
-                    <div class="form">
-                      <div class="form-element">
-                        <label for="fullname" id="color">First name</label><br>
-                        <input type="text" id="fname" placeholder="ex John" required/>
-                        <div class="error"></div>
+                      id="form"
+                      method="post"
+                      name="form"
+                      onsubmit="return validated()"
+                    >
+                      <h5 class="modal-title">Register here</h5>
+                      <div class="form">
+                        <div class="form-element">
+                          <label for="fullname" id="color">First name</label
+                          ><br />
+                          <input
+                            type="text"
+                            id="fname"
+                            placeholder="ex John"
+                            required
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="fullname" id="color">Last name</label
+                          ><br />
+                          <input
+                            type="text"
+                            id="lname"
+                            placeholder="ex Smith"
+                            required
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="email" id="color">Email</label><br />
+                          <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter Email"
+                            required
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="mobile" id="color">Mobile Number</label
+                          ><br />
+                          <input
+                            type="tel"
+                            id="mobileNumber"
+                            placeholder="090912345678"
+                            required
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="password" id="color">Password</label
+                          ><br />
+                          <input
+                            type="password"
+                            id="password"
+                            placeholder="min 8 characters"
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="password" id="color"
+                            >Confirm Password</label
+                          ><br />
+                          <input type="password" id="password2" />
+                          <div class="error"></div>
+                        </div>
+                        <div class="pt-2">
+                          <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="signup"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                        <div class="form-element"></div>
+                        <div class="form-element">
+                          <a href="#" id="member"
+                            ><small
+                              >Already have an account? Log In Here!</small
+                            ></a
+                          >
+                        </div>
                       </div>
-                      <div class="form-element">
-                        <label for="fullname"  id="color" >Last name</label><br>
-                        <input type="text" id="lname" placeholder="ex Smith" required/>
-                        <div class="error"></div>
-                      </div>
-                      <div class="form-element">
-                        <label for="email" id="color">Email</label><br>
-                        <input type="email" id="email" placeholder="Enter Email" required/>
-                        <div class="error"></div>
-                      </div>
-                      <div class="form-element">
-                        <label for="mobile"  id="color" >Mobile Number</label><br>
-                        <input type="tel" id="mobileNumber" placeholder="090912345678" required/>
-                        <div class="error"></div>
-                      </div>
-                      <div class="form-element">
-                        <label for="password"  id="color">Password</label><br>
-                        <input type="password" id="password" placeholder="min 8 characters" />
-                        <div class="error"></div>
-                      </div>
-                      <div class="form-element">
-                        <label for="password"  id="color">Confirm Password</label><br>
-                        <input type="password" id="password2" />
-                        <div class="error"></div>
-                      </div>
-                      <div class="pt-2">
-                        <button type="submit" class="btn btn-primary" id="signup">Submit</button>
-                      </div>
-                      <div class="form-element">
-                 
-                      </div>
-                      <div class="form-element">
-                        <a href="#" id="member"><small>Already have an account? Log In Here!</small></a>
-                      </div>
-                    </div>
-                  </form>
+                    </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
                   </div>
                 </div>
               </div>
