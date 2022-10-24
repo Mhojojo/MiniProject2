@@ -1,85 +1,85 @@
-document.querySelector("#show-login").addEventListener("click", function () {
-  document.querySelector(".popup").classList.add("active");
-});
-document
-  .querySelector(".popup .close-btn")
-  .addEventListener("click", function () {
-    document.querySelector(".popup").classList.remove("active");
-  });
-
-const form = document.getElementById("form");
-const fullName = document.getElementById("full-name");
-const email = document.getElementById("email");
-const contactNumber = document.getElementById("mobileNumber");
-const password = document.getElementById("password");
-const password2 = document.getElementById("password2");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  validateInputs();
-});
-
-const setError = (element, message) => {
-  const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error");
-
-  errorDisplay.innerText = message;
-  inputControl.classList.add("error");
-};
-
-const isValidEmail = (email) => {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-};
-
-const validatePhoneNumber = (input_str) => {
-  var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-
-  return re.test(input_str);
-};
-
-const validateInputs = () => {
-  const fullNameValue = fullName.value.trim();
-  const emailValue = email.value.trim();
-  const contactNumberValue = contactNumber.value.trim();
-  const passwordValue = password.value.trim();
-  const password2Value = password2.value.trim();
-
-  if (fullNameValue === "") {
-    setError(fullName, "Full name is required.");
-  } else {
+function checkfirstName(name) {
+  var valid = true;
+  if (name == "") {
+    valid = false;
+    alert("Last name must not be empty!");
+  } else if (name.fength < 2) {
+    valid = false;
+    alert("Last name too short!");
   }
+  let has_digit = false;
+  for (let i = 0; i < name.length; i++) {
+    if ("0123456789".includes(name.charAt(i))) {
+      has_digit = true;
+    }
+  }
+  if (has_digit) {
+    valid = false;
+    alert("First and Last Name Should not consist of numbers");
+  }
+  return valid;
+}
 
-  if (contactNumberValue === "") {
-    setError(contactNumber, "Contact number is required.");
-  } else if (!validatePhoneNumber(contactNumberValue)) {
-    setError(contactNumber, "Contact number is not valid.");
-  }
+function containsNumbers(str) {
+return /[0-9]/.test(str);
+    }
 
-  if (emailValue === "") {
-    setError(email, "Email is required.");
-  } else if (!isValidEmail(emailValue)) {
-    setError(email, "Provide a valid email address.");
-  } else {
-  }
+function validatePhoneNumber(input_str) {
+var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+    
+      return re.test(input_str);
+    }
 
-  if (passwordValue === "") {
-    setError(password, "Password is required.");
-  } else if (passwordValue.length < 8) {
-    setError(password, "Password must be at least 8 characters.");
-  } else {
+
+function checkPassword(password){
+  
+    var passValid = true;
+             if (password.length < 8) {
+                alert("Should have atleast 8 characters");
+                var passValid = false;
+                } 
+               let x= containsNumbers(password);
+               if (!x){
+                 passValid = false;
+                alert("Password should contain atleast 1 number");
+                }
+                return passValid;
+}
+
+function checkPhone(mobile){
+  var phoneValid = true;
+  let testPhone = validatePhoneNumber(input_str);
+  if(!testPhone){
+    alert("Please enter a valid Phone Number")
+    phoneValid = false;
   }
-  if (password2Value === "") {
-    setError(password2, "Please confirm your password");
-  } else if (password2Value !== passwordValue) {
-    setError(password2, "Passwords do not match.");
-  }
-};
+  return phoneValid
+}
+
+
+function checkPassword2 (pass1,pass2){
+  var confirmPass = true; 
+if(pass1 !== pass2){
+  confirmPass =false;
+  alert("password did not match!")
+}
+return confirmPass;
+}
 
 function validated() {
-  if (validateInputs()) {
-    alert("Registered Successfully");
-  }
+  var fname = document.forms["form"]["fname"].value;
+  var lname = document.forms["form"]["lname"].value;
+  var email = document.forms["form"]["email"].value;
+  var mobile = document.forms["form"]["mobileNumber"].value;
+  var pass1 = document.forms["form"]["password"].value;
+  var pass2 = document.forms["form"]["password2"].value;
+
+  var islnameValid = checkfirstName(fname);
+  var islnameValid = checkfirstName(lname);
+  var isPassValid = checkPassword(password);
+  var isPhoneValid = validatePhoneNumber(mobile);
+  var isConfirmPassValid = checkPassword2(pass1,pass2)
+
 }
+
+
