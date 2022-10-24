@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+   
+        <div class="container">
+            <div class="row">
+                <div class = "col-lg-4">
+                    <form name =myForm onsubmit="validate();return false ">
+                    <label>Property Price</label><br>
+                    <input type="number" id="price" placeholder=""><br>
+                    <label>Down Payment</label><br>
+                    <input type="number" id="downPayment"><br>
+                    <label>Anual Interest</label><br>
+                    <input type="number" id="interest" placeholder="%"><br>
+                    <label>Payment Terms</label><br>
+                    <input type="number" id="years" placeholder="Number of years"><br><br>
+                    <input type="submit" value="Calculate"> 
+                </form>
+                </div>
+                <div class = "col-lg-6 md-4 sl-2" >
+                    <p id="amount"></p>
+                    <p id="int"></p>
+                    <p id="total"></p>
+                    <p id="down"></p>
+                    <p id="month"></p>
+                    <p id="pay"></p>
+                </div>
+            </div>
+        </div>
+    
+</body>
+<script>
+    function validate(){
+        var price = Number(document.forms["myForm"]["price"].value);
+        var downPayment = document.forms["myForm"]["downPayment"].value;
+        var interest = document.forms["myForm"]["interest"].value;
+        var years = document.forms["myForm"]["years"].value;
+
+        let decimalInt = (interest/100);
+        let percent =(price * decimalInt);
+        let total = (price + percent);
+        let initialAmount = ((percent + price)-downPayment);
+        let monthly = (initialAmount/(years*12));
+        let pay = monthly.toFixed(2);
+        
+        console.log(initialAmount)
+        console.log(percent)
+        console.log(pay)
+
+        document.getElementById("amount").innerHTML = "Property Amount: " + price;
+        document.getElementById("int").innerHTML = "Interest: " +interest+ "%" +" off " + price +" = " + percent;
+        document.getElementById("total").innerHTML = "Total Amount: " + total;
+        document.getElementById("down").innerHTML = "Less downpayment: " + initialAmount;
+        document.getElementById("pay").innerHTML = "Monthly Payment for "+ years +"years = <b>" + pay +"</b>";
+      return false;
+    }
+</script>
+</html>
+
+
+

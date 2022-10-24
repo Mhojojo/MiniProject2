@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sign_up.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="center">
+      <button id="show-login">Get Started</button>
+    </div>
+    <form
+      class="popup"
+      id="form"
+      method="post"
+      name="form"
+      onsubmit="return validated()"
+    >
+      <div class="close-btn">&times;</div>
+      <div class="form">
+        <h2>Register</h2>
+        <div class="form-element">
+          <label for="fullname">Full name</label>
+          <input type="text" id="full-name" />
+          <div class="error"></div>
+        </div>
+        <div class="form-element">
+          <label for="email">Email</label>
+          <input type="text" id="email" placeholder="Enter Email" />
+          <div class="error"></div>
+        </div>
+        <div class="form-element">
+          <label for="mobile">Mobile Number</label>
+          <input type="text" id="mobileNumber" />
+          <div class="error"></div>
+        </div>
+        <div class="form-element">
+          <label for="password">Password</label>
+          <input type="password" id="password" />
+          <div class="error"></div>
+        </div>
+        <div class="form-element">
+          <label for="password">Confirm Password</label>
+          <input type="password" id="password2" />
+          <div class="error"></div>
+        </div>
+        <div class="form-element">
+          <input type="checkbox" id="remember-account" />
+          <label for="remember-account"
+            >I accept the Terms of Use & Privacy Policy</label
+          >
+        </div>
+        <div class="form-element">
+          <button type="submit">Log In</button>
+        </div>
+        <div class="form-element">
+          <a href="#">Already have an account? Log In Here!</a>
+        </div>
+      </div>
+    </form>
+    <script src="sign_up.js"></script>
+  </body>
+</html>
