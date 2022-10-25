@@ -6,7 +6,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
-    
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
@@ -142,69 +141,129 @@
               Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no.
               Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.
             </p>
-            <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn"data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            <a
+              href=""
+              class="btn btn-primary py-3 px-5 me-3 animated fadeIn"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
               >Get Started</a
             >
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">  
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                  
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
                   </div>
                   <div class="modal-body">
                     <form
-                    id="form"
-                    method="post"
-                    name="form"
-                    onsubmit="return validated()">
-
-                    <h5 class="modal-title">Register here</h5>
-                    <div class="form">
-                      <div class="form-element">
-                        <label for="fullname" id="color">First name</label><br>
-                        <input type="text" id="fname" placeholder="ex John" required/>
-                        <div class="error"></div>
+                      id="form"
+                      method="post"
+                      name="form"
+                      onsubmit="return validated()"
+                    >
+                      <h5 class="modal-title">Register here</h5>
+                      <div class="form">
+                        <div class="form-element">
+                          <label for="fullname" id="color">First name</label
+                          ><br />
+                          <input
+                            type="text"
+                            id="fname"
+                            placeholder="ex John"
+                            required
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="fullname" id="color">Last name</label
+                          ><br />
+                          <input
+                            type="text"
+                            id="lname"
+                            placeholder="ex Smith"
+                            required
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="email" id="color">Email</label><br />
+                          <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter Email"
+                            required
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="mobile" id="color">Mobile Number</label
+                          ><br />
+                          <input
+                            type="tel"
+                            id="mobileNumber"
+                            placeholder="090912345678"
+                            required
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="password" id="color">Password</label
+                          ><br />
+                          <input
+                            type="password"
+                            id="password"
+                            placeholder="min 8 characters"
+                          />
+                          <div class="error"></div>
+                        </div>
+                        <div class="form-element">
+                          <label for="password" id="color"
+                            >Confirm Password</label
+                          ><br />
+                          <input type="password" id="password2" />
+                          <div class="error"></div>
+                        </div>
+                        <div class="pt-2">
+                          <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="signup"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                        <div class="form-element"></div>
+                        <div class="form-element">
+                          <a href="#" id="member"
+                            ><small
+                              >Already have an account? Log In Here!</small
+                            ></a
+                          >
+                        </div>
                       </div>
-                      <div class="form-element">
-                        <label for="fullname"  id="color" >Last name</label><br>
-                        <input type="text" id="lname" placeholder="ex Smith" required/>
-                        <div class="error"></div>
-                      </div>
-                      <div class="form-element">
-                        <label for="email" id="color">Email</label><br>
-                        <input type="email" id="email" placeholder="Enter Email" required/>
-                        <div class="error"></div>
-                      </div>
-                      <div class="form-element">
-                        <label for="mobile"  id="color" >Mobile Number</label><br>
-                        <input type="tel" id="mobileNumber" placeholder="090912345678" required/>
-                        <div class="error"></div>
-                      </div>
-                      <div class="form-element">
-                        <label for="password"  id="color">Password</label><br>
-                        <input type="password" id="password" placeholder="min 8 characters" />
-                        <div class="error"></div>
-                      </div>
-                      <div class="form-element">
-                        <label for="password"  id="color">Confirm Password</label><br>
-                        <input type="password" id="password2" />
-                        <div class="error"></div>
-                      </div>
-                      <div class="pt-2">
-                        <button type="submit" class="btn btn-primary" id="signup">Submit</button>
-                      </div>
-                      <div class="form-element">
-                 
-                      </div>
-                      <div class="form-element">
-                        <a href="#" id="member"><small>Already have an account? Log In Here!</small></a>
-                      </div>
-                    </div>
-                  </form>
+                    </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
                   </div>
                 </div>
               </div>
@@ -268,7 +327,7 @@
       </div>
       <!-- Search End -->
 
-      <!-- Category Start -->
+      <!-- Property Types Start -->
       <div class="container-xxl py-5">
         <div class="container">
           <div
@@ -278,16 +337,15 @@
           >
             <h1 class="mb-3">Property Types</h1>
             <p>
-              Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut
-              dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed
-              rebum vero dolor duo.
+              Search a wide variety of real estate properties for sale and for
+              rent here in the Philippines.
             </p>
           </div>
           <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
               <a
                 class="cat-item d-block bg-light text-center rounded p-3"
-                href=""
+                onclick="typeApartmentIndex()"
               >
                 <div class="rounded p-4">
                   <div class="icon mb-3">
@@ -298,14 +356,14 @@
                     />
                   </div>
                   <h6>Apartment</h6>
-                  <span>123 Properties</span>
+                  <span>Studio | Loft | Duplex</span>
                 </div>
               </a>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
               <a
                 class="cat-item d-block bg-light text-center rounded p-3"
-                href=""
+                onclick="typeVillaIndex()"
               >
                 <div class="rounded p-4">
                   <div class="icon mb-3">
@@ -316,14 +374,14 @@
                     />
                   </div>
                   <h6>Villa</h6>
-                  <span>123 Properties</span>
+                  <span>Private | Rustic Farmhouses | Cabins</span>
                 </div>
               </a>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
               <a
                 class="cat-item d-block bg-light text-center rounded p-3"
-                href=""
+                onclick="typeHomeIndex()"
               >
                 <div class="rounded p-4">
                   <div class="icon mb-3">
@@ -334,14 +392,14 @@
                     />
                   </div>
                   <h6>Home</h6>
-                  <span>123 Properties</span>
+                  <span>Single-Family | Condo | Co-op</span>
                 </div>
               </a>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
               <a
                 class="cat-item d-block bg-light text-center rounded p-3"
-                href=""
+                onclick="typeOfficeIndex()"
               >
                 <div class="rounded p-4">
                   <div class="icon mb-3">
@@ -352,14 +410,14 @@
                     />
                   </div>
                   <h6>Office</h6>
-                  <span>123 Properties</span>
+                  <span>Class A | Class B | Class C</span>
                 </div>
               </a>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
               <a
                 class="cat-item d-block bg-light text-center rounded p-3"
-                href=""
+                onclick="typeBuildingIndex()"
               >
                 <div class="rounded p-4">
                   <div class="icon mb-3">
@@ -370,14 +428,14 @@
                     />
                   </div>
                   <h6>Building</h6>
-                  <span>123 Properties</span>
+                  <span>Residential | Hotel | Condo</span>
                 </div>
               </a>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
               <a
                 class="cat-item d-block bg-light text-center rounded p-3"
-                href=""
+                onclick="typeTownhouseIndex()"
               >
                 <div class="rounded p-4">
                   <div class="icon mb-3">
@@ -388,50 +446,14 @@
                     />
                   </div>
                   <h6>Townhouse</h6>
-                  <span>123 Properties</span>
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-              <a
-                class="cat-item d-block bg-light text-center rounded p-3"
-                href=""
-              >
-                <div class="rounded p-4">
-                  <div class="icon mb-3">
-                    <img
-                      class="img-fluid"
-                      src="img/icon-condominium.png"
-                      alt="Icon"
-                    />
-                  </div>
-                  <h6>Shop</h6>
-                  <span>123 Properties</span>
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-              <a
-                class="cat-item d-block bg-light text-center rounded p-3"
-                href=""
-              >
-                <div class="rounded p-4">
-                  <div class="icon mb-3">
-                    <img
-                      class="img-fluid"
-                      src="img/icon-luxury.png"
-                      alt="Icon"
-                    />
-                  </div>
-                  <h6>Garage</h6>
-                  <span>123 Properties</span>
+                  <span>Single-Family | Multi-Family</span>
                 </div>
               </a>
             </div>
           </div>
         </div>
       </div>
-      <!-- Category End -->
+      <!-- Property Types End -->
 
       <!-- About Start -->
       <div class="container-xxl py-5">
@@ -494,7 +516,8 @@
                   <a
                     class="btn btn-outline-primary active"
                     data-bs-toggle="pill"
-                    href="#tab-1"
+                    href="#"
+                    onclick="showAll()"
                     >Show All</a
                   >
                 </li>
@@ -502,7 +525,8 @@
                   <a
                     class="btn btn-outline-primary"
                     data-bs-toggle="pill"
-                    href="#tab-2"
+                    href="#"
+                    onclick="forSale()"
                     >For Sale</a
                   >
                 </li>
@@ -510,7 +534,8 @@
                   <a
                     class="btn btn-outline-primary"
                     data-bs-toggle="pill"
-                    href="#tab-3"
+                    href="#"
+                    onclick="forRent()"
                     >For Rent</a
                   >
                 </li>
@@ -521,9 +546,9 @@
             <div id="tab-1" class="tab-pane fade show p-0 active">
               <div class="row g-4">
                 <!-- 1 START -->
-
                 <div
-                  class="col-lg-4 col-md-6 wow fadeInUp"
+                  class="forSale villa col-lg-4 col-md-6 wow fadeInUp"
+                  id="lifestyle"
                   data-wow-delay="0.1s"
                 >
                   <div class="property-item rounded overflow-hidden">
@@ -632,7 +657,8 @@
                       >
                       <p>
                         <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >11540 SW 107th Ave, Miami, FL 33176
+                        >J.P. Rizal Street, Barangay Olympia, Makati City 1200
+                        Metro Manila
                       </p>
                     </div>
                     <div class="d-flex border-top">
@@ -681,7 +707,8 @@
                         data-bs-target="#staticBackdrop"
                       >
                         <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >11540 SW 107th Ave, Miami, FL 33176
+                        >J.P. Rizal Street, Barangay Olympia, Makati City 1200
+                        Metro Manila
                       </a>
 
                       <!-- Modal -->
@@ -758,7 +785,7 @@
                 <!-- 2 START -->
 
                 <div
-                  class="col-lg-4 col-md-6 wow fadeInUp"
+                  class="forRent office col-lg-4 col-md-6 wow fadeInUp"
                   data-wow-delay="0.3s"
                 >
                   <div class="property-item rounded overflow-hidden">
@@ -855,7 +882,7 @@
                       <div
                         class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
                       >
-                        Apartment
+                        Office
                       </div>
                     </div>
                     <div class="p-4 pb-0">
@@ -863,11 +890,11 @@
                         PHP 10,000/night (For Rent)
                       </h5>
                       <a class="d-block h5 mb-2" href="#" onclick="storeApt2()"
-                        >Seaview Hills Luxury Apartments</a
+                        >Seaview Hills Luxury</a
                       >
                       <p>
                         <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >Purok 6, Songculan, 6339 Dauis, Philippines
+                        >Purok 6, Barangay Songculan, 6339 Dauis, Bohol
                       </p>
                     </div>
                     <div class="d-flex border-top">
@@ -900,7 +927,7 @@
                       ></button>
                     </div>
                     <div class="offcanvas-body">
-                      <h3>Seaview Hills Luxury Apartments</h3>
+                      <h3>Seaview Hills Luxury</h3>
                       <p>
                         All self-catered units feature tiled floors and are
                         fitted with a flat-screen TV, a safety deposit box, an
@@ -915,7 +942,7 @@
                         data-bs-target="#staticBackdrop2"
                       >
                         <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >Purok 6, Songculan, 6339 Dauis, Philippines
+                        >Purok 6, Barangay Songculan, 6339 Dauis, Bohol
                       </a>
 
                       <!-- Modal -->
@@ -992,7 +1019,7 @@
                 <!-- 3 START -->
 
                 <div
-                  class="col-lg-4 col-md-6 wow fadeInUp"
+                  class="forSale home col-lg-4 col-md-6 wow fadeInUp"
                   data-wow-delay="0.5s"
                 >
                   <div class="property-item rounded overflow-hidden">
@@ -1100,8 +1127,9 @@
                         >Tierra Antigua Realty</a
                       >
                       <p>
-                        <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >4075 W Granite Dells Ct, Tucson, AZ 85745
+                        <i class="fa fa-map-marker-alt text-primary me-2"></i>W
+                        Brgy. Tangub, Circumferential-Handumanan Access Road,
+                        Bacolod, Negros Occidental
                       </p>
                     </div>
                     <div class="d-flex border-top">
@@ -1155,7 +1183,8 @@
                         data-bs-target="#staticBackdrop3"
                       >
                         <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >4075 W Granite Dells Ct, Tucson, AZ 85745
+                        >Brgy. Tangub, Circumferential-Handumanan Access Road,
+                        Bacolod, Negros Occidental
                       </a>
 
                       <!-- Modal -->
@@ -1232,7 +1261,7 @@
                 <!-- 4 START -->
 
                 <div
-                  class="col-lg-4 col-md-6 wow fadeInUp"
+                  class="forSale building col-lg-4 col-md-6 wow fadeInUp"
                   data-wow-delay="0.3s"
                 >
                   <div class="property-item rounded overflow-hidden">
@@ -1329,7 +1358,7 @@
                       <div
                         class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
                       >
-                        Home
+                        Building
                       </div>
                     </div>
                     <div class="p-4 pb-0">
@@ -1341,7 +1370,8 @@
                       >
                       <p>
                         <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >442 Riverview Ln, Melbourne Beach, FL 32951
+                        >Allea Building, Santo Niño Village, Block 1 Lot 7 Maa
+                        Highway, Talomo, Davao City
                       </p>
                     </div>
                     <div class="d-flex border-top">
@@ -1396,7 +1426,8 @@
                         data-bs-target="#staticBackdrop4"
                       >
                         <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >442 Riverview Ln, Melbourne Beach, FL 32951
+                        >Allea Building, Santo Niño Village, Block 1 Lot 7 Maa
+                        Highway, Talomo, Davao City
                       </a>
 
                       <!-- Modal -->
@@ -1473,7 +1504,7 @@
                 <!-- 5 START -->
 
                 <div
-                  class="col-lg-4 col-md-6 wow fadeInUp"
+                  class="forRent apartment col-lg-4 col-md-6 wow fadeInUp"
                   data-wow-delay="0.5s"
                 >
                   <div class="property-item rounded overflow-hidden">
@@ -1570,19 +1601,19 @@
                       <div
                         class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
                       >
-                        Villa
+                        Apartment
                       </div>
                     </div>
                     <div class="p-4 pb-0">
                       <h5 class="text-primary mb-3">
-                        PHP 41,750,000 (For Sale)
+                        PHP 20,000/night (For Rent)
                       </h5>
                       <a class="d-block h5 mb-2" href="#" onclick="storeApt5()"
                         >My Home Group Real Estate</a
                       >
                       <p>
-                        <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >3650 W Dawnbreaker Pl, Tucson, AZ 85745
+                        <i class="fa fa-map-marker-alt text-primary me-2"></i>W
+                        Pedro Cayetano Boulevard, Taguig, 1630 Metro Manila
                       </p>
                     </div>
                     <div class="d-flex border-top">
@@ -1635,7 +1666,7 @@
                         data-bs-target="#staticBackdrop5"
                       >
                         <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >3650 W Dawnbreaker Pl, Tucson, AZ 85745
+                        >Pedro Cayetano Boulevard, Taguig, 1630 Metro Manila
                       </a>
 
                       <!-- Modal -->
@@ -1712,7 +1743,7 @@
                 <!-- 6 START -->
 
                 <div
-                  class="col-lg-4 col-md-6 wow fadeInUp"
+                  class="forRent townhouse col-lg-4 col-md-6 wow fadeInUp"
                   data-wow-delay="0.7s"
                 >
                   <div class="property-item rounded overflow-hidden">
@@ -1809,19 +1840,20 @@
                       <div
                         class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
                       >
-                        Home
+                        Townhouse
                       </div>
                     </div>
                     <div class="p-4 pb-0">
                       <h5 class="text-primary mb-3">
-                        PHP 30,000,000 (For Sale)
+                        PHP 16,000/night (For Rent)
                       </h5>
                       <a class="d-block h5 mb-2" href="#" onclick="storeApt6()"
                         >Long Realty Company</a
                       >
                       <p>
-                        <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >4610 N Cerritos Dr, Tucson, AZ 85745
+                        <i class="fa fa-map-marker-alt text-primary me-2"></i>N
+                        ALong Conel Road, Brgy, General Santos City, 9500 South
+                        Cotabato
                       </p>
                     </div>
                     <div class="d-flex border-top">
@@ -1876,7 +1908,8 @@
                         data-bs-target="#staticBackdrop6"
                       >
                         <i class="fa fa-map-marker-alt text-primary me-2"></i
-                        >4610 N Cerritos Dr, Tucson, AZ 85745
+                        >ALong Conel Road, Brgy, General Santos City, 9500 South
+                        Cotabato
                       </a>
 
                       <!-- Modal -->
@@ -2880,5 +2913,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js\index.js"></script>
+    <script src="js\featured.js"></script>
   </body>
 </html>
