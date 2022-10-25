@@ -79,3 +79,7 @@
     
 })(jQuery);
 
+function sendMessage() {
+    alert("Message Sent!")
+}
+
