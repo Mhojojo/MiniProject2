@@ -31,6 +31,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     <title>Document</title>
+    
 </head>
 <body>
    
@@ -38,56 +39,272 @@
             <div class="row">
                 <div class = "col-lg-4">
                     <form name =myForm onsubmit="validate();return false ">
-                    <label>Property Price</label><br>
-                    <input type="number" id="price" placeholder=""><br>
+      
                     <label>Down Payment</label><br>
                     <input type="number" id="downPayment"><br>
-                    <label>Anual Interest</label><br>
-                    <input type="number" id="interest" placeholder="%"><br>
                     <label>Payment Terms</label><br>
                     <input type="number" id="years" placeholder="Number of years"><br><br>
                     <input type="submit" value="Calculate"> 
                 </form>
-                </div>
-                <div class = "col-lg-6 md-4 sl-2" >
-                    <p id="amount"></p>
-                    <p id="int"></p>
-                    <p id="total"></p>
-                    <p id="down"></p>
-                    <p id="month"></p>
-                    <p id="pay"></p>
-                </div>
-            </div>
+                
         </div>
+       
+      </head>
+      <body>
+        <div class="box">
+          <h3>SAMPLE COMPUTATION SHEET</h3>
+          
+          <div class="alignment">
+            PROJECT:
+            <span class="right" style="margin-right: 50px">SOLANO HILLS</span>
+          </div>
+          <div class="underline"></div>
+          <div class="alignment">
+            UNIT:<span class="right" style="margin-right: 70px">1604 typical</span>
+          </div>
+          <div class="underline"></div>
     
+          <div class="alignment">
+            <div class="bold">
+              TOTAL SELLING PRICE:(PHP)<span class="right">2,000,00.00</span>
+            </div>
+    
+            <h4>PAYMENT OPTIONS (PhP)</h4>
+            <div>TOTAL SELLING PRICE: <span class="right">2,000,000.00</span></div>
+            <div>LESS DOWN PAYMENT: <span class="right" id="reservation">15,000.00</span></div>
+            <div class="underline"></div>
+            <div>
+              TOTAL CONTACT PRICE: <span class="right_bold" id="less">1,480,000.00</span>
+            </div>
+          </div>
+          <div class="alignment">
+            <h4>CASH PAYMENT</h4>
+            <div>
+              TOTAL CONTRACT PRICE: <span class="right_bold" id="contract">1,480,000.00</span>
+            </div>
+            <div>LESS 5% DISCOUNT <span class="right_bold" id ="discount">74,000.00</span></div>
+            <div class="underline"></div>
+            <div>CASH PRICE <span class="right_bold" id="totalPay">1,406,000.00</span></div>
+            <div class="underline"></div>
+          </div>
+    
+          <div class="alignment">
+            <h4>DEFERRED CASH PAYMENT</h4>
+            <div>
+              TOTAL CONTRACT PRICE: <span class="right_bold">2,000,000.00</span>
+            </div>
+            <div>
+              <span id="year">12 MONTHS TO PAY   123,333.33 (0% INTEREST RATE)</span>
+            </div>
+          </div>
+    
+          <div class="alignment">
+            <h4 style="width: 800px">
+              HDMF (Pag-IBIG)PAYMENT(Computation for maximum loan value, loan value
+              may change subject to buyer's capability)
+            </h4>
+            <div>
+              TOTAL CONTRACT PRICE: <span class="right_bold">1,480,000.00</span>
+            </div>
+            <div>
+              ESTIMATED LOAN VALUE: <span class="right_bold">1,270,000.00</span>
+            </div>
+            <div>DOWNPAYMENT: <span class="right_bold">210,000.00</span></div>
+          </div>
+    
+          <div class="alignment2">
+            <h4>A. DOWNPAYMENT OPTIONS</h4>
+            <div>
+              SPOT DOWNPAYMENT
+              <span class="right"
+                >205,800.00 (LESS 2% DISCOUNT FOR SPOT DP - 30 DAYS)</span
+              >
+            </div>
+            <div>
+              INSTALLMENT BASIS<span class="right"
+                >17,500.00 (12MONTHS @ 0% INTEREST)</span
+              >
+            </div>
+          </div>
+          <h4>B. LOAN VALUE MONTHLY AMORTIZATION (MA) OPTIONS(PhP/mo.)</h4>
+          <table>
+            <tr>
+              <th>YEAR TERMS</th>
+              <th>MONTHLY AMORTIZATION</th>
+              <th>GROSS INCOME</th>
+            </tr>
+            <tr>
+              <td>30 YEARS</td>
+              <td>9.697.26</td>
+              <td>32,324.21</td>
+            </tr>
+            <tr>
+              <td>25 YEARS</td>
+              <td>10,245.13</td>
+              <td>34,150.43</td>
+            </tr>
+            <tr>
+              <td>20 YEARS</td>
+              <td>11,138.78</td>
+              <td>37,129.26</td>
+            </tr>
+            <tr>
+              <td>15 YEARS</td>
+              <td>12,733.06</td>
+              <td>42,443.53</td>
+            </tr>
+            <tr>
+              <td>10 YEARS</td>
+              <td>16,090.60</td>
+              <td>53,635.32</td>
+            </tr>
+            <tr>
+              <td>5 YEARS</td>
+              <td>26,519.01</td>
+              <td>88,396.70</td>
+            </tr>
+          </table>
+    
+          <div class="alignment">
+            <h4>IN-HOUSE FINANCING OPTIONS</h4>
+            <div>
+              TOTAL CONTRACT PRICE: <span class="right_bold">1,480,000.00</span>
+            </div>
+            <div>50% DOWNPAYMENT: <span class="right_bold">740,000.00</span></div>
+            <div>
+              ESTIMATED LOAN VALUE: <span class="right_bold">740,000.00</span>
+            </div>
+          </div>
+    
+          <div class="alignment2">
+            <h4>A. DOWNPAYMENT OPTIONS</h4>
+            <div>
+              SPOT DOWNPAYMENT
+              <span class="right"
+                >725,200.00 (LESS 2% DISCOUNT FOR SPOT OP - 30 DAYS)</span
+              >
+            </div>
+            <div>
+              INSTALLMENT BASIS
+              <span class="right">61,666.67 (12 MONTHS @ 0% INTEREST)</span>
+            </div>
+          </div>
+          <h4>B. 50% LOAN VALUE MONTHLY AMORTIZATION (MA) OPTIONS (PhP/mo.)</h4>
+          <table>
+            <tr>
+              <th>YEARS TERMS</th>
+              <th>MONTHLY AMORTIZATION</th>
+              <th>GROSS INCOME</th>
+            </tr>
+            <tr>
+              <td>9 YEARS</td>
+              <td>12,968.69</td>
+              <td>43,228.95</td>
+            </tr>
+            <tr>
+              <td>8 YEARS</td>
+              <td>13,711.30</td>
+              <td>45,704.35</td>
+            </tr>
+            <tr>
+              <td>7 YEARS</td>
+              <td>14,697.92</td>
+              <td>48,993.08</td>
+            </tr>
+            <tr>
+              <td>6 YEARS</td>
+              <td>16,051.96</td>
+              <td>53,506.54</td>
+            </tr>
+            <tr>
+              <td>5 YEARS</td>
+              <td>17,995.36</td>
+              <td>59,984.55</td>
+            </tr>
+            <tr>
+              <td>4 YEARS</td>
+              <td>20,971.81</td>
+              <td>69,906.02</td>
+            </tr>
+            <tr>
+              <td>3 YEARS</td>
+              <td>26,016.20</td>
+              <td>86,720.67</td>
+            </tr>
+            <tr>
+              <td>2 YEARS</td>
+              <td>36,232.70</td>
+              <td>120,775.67</td>
+            </tr>
+            <tr>
+              <td>1 YEAR</td>
+              <td>67,140.84</td>
+              <td>223,802.79</td>
+            </tr>
+          </table>
+        </div>
+      </body>
 </body>
+
+
 <script>
     function validate(){
         var price = Number(document.forms["myForm"]["price"].value);
         var downPayment = document.forms["myForm"]["downPayment"].value;
         var interest = document.forms["myForm"]["interest"].value;
         var years = document.forms["myForm"]["years"].value;
-
+        var commas = downPayment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         let decimalInt = (interest/100);
         let percent =(price * decimalInt);
         let total = (price + percent);
         let initialAmount = ((percent + price)-downPayment);
-        let monthly = (initialAmount/(years*12));
+        let year = (years * 12);
+        let monthly = (2000000/ year);
         let pay = monthly.toFixed(2);
-        
-        console.log(initialAmount)
-        console.log(percent)
-        console.log(pay)
+        let less = (2000000 - downPayment);
+        let lessForm = less.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        let discount = (less *.05);
+        let lessDiscount = discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        let totalPay = (less -discount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+      
+
+        document.getElementById("discount").innerHTML = lessDiscount +".00";
+        document.getElementById("contract").innerHTML = lessForm +".00";
+        document.getElementById("less").innerHTML = lessForm +".00";
         document.getElementById("amount").innerHTML = "Property Amount: " + price;
+        document.getElementById("reservation").innerHTML = commas +".00";
         document.getElementById("int").innerHTML = "Interest: " +interest+ "%" +" off " + price +" = " + percent;
         document.getElementById("total").innerHTML = "Total Amount: " + total;
         document.getElementById("down").innerHTML = "Less downpayment: " + initialAmount;
         document.getElementById("pay").innerHTML = "Monthly Payment for "+ years +"years = <b>" + pay +"</b>";
+        document.getElementById("totalPay").innerHTML = totalPay +".00";
+        document.getElementById("year").innerHTML = year +" MONTHS TO PAY </span> <span class='right_bold'> " 
+          +monthly +" (0% INTEREST RATE)</span>";
+       
+
+       
       return false;
     }
+
+
+    var doc = new jsPDF();
+        var specialElementHandlers = {
+          "#editor": function (element, renderer) {
+            return true;
+          },
+        };
+
+        //margins.left, // x coord   margins.top, { // y coord
+        $("#generatePDF").click(function () {
+          doc.fromHTML($("#htmlContent").html(), 15, 15, {
+            width:100,
+            elementHandlers: specialElementHandlers,
+          });
+          doc.save("sample_file.pdf");
+        });
+   
 </script>
 </html>
-
 
 
