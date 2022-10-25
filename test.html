@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script>
+      // Define the object
+      const valuesCards = [
+        {
+          image: "../img/image1.png",
+          title: "title 1",
+          content: "super content 1",
+        },
+        {
+          image: "../img/image2.png",
+          title: "title 2",
+          content: "super content 2",
+        },
+        {
+          image: "../img/image-3.png",
+          title: "title3",
+          content: "blablablablbalbalbabla blablaba",
+        },
+      ];
+
+      // Identify the DOM element to store cards
+      cardsContainer = document.querySelector("#products-cards-container");
+
+      // Create a loop that iterates over valuesCards object
+      for (let value of Object.values(valuesCards)) {
+        console.log(value.title);
+        // Create an element to store new card content
+        let newCard = document.createElement("div");
+
+        // Add products-cards class to new element
+        newCard.classList.add("products-cards");
+
+        // Create a multiline string template with current values each time
+        cardHtml = `
+           <div class="">              
+            <div class="product-header">
+                <img src="${value.image}"/>
+            </div>
+            <div class="product-content">
+                <h4>${value.title}</h4>
+                <p>${value.content}</p>
+            </div> 
+            <button class="info-button">+ info</button>
+           </div>   
+        `;
+
+        // Append the new element to the cardsContainer element in DOM
+        cardsContainer.appendChild(newCard);
+
+        // Inject the template html on DOM's new append item
+        newCard.innerHTML = cardHtml;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="products-cards-container">
+      <div class="products-cards"></div>
+    </div>
+  </body>
+</html>

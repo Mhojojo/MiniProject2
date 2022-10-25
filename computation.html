@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,63 +31,292 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     <title>Document</title>
-</head>
-<body>
-   
-        <div class="container">
-            <div class="row">
-                <div class = "col-lg-4">
-                    <form name =myForm onsubmit="validate();return false ">
-                    <label>Property Price</label><br>
-                    <input type="number" id="price" placeholder=""><br>
-                    <label>Down Payment</label><br>
-                    <input type="number" id="downPayment"><br>
-                    <label>Anual Interest</label><br>
-                    <input type="number" id="interest" placeholder="%"><br>
-                    <label>Payment Terms</label><br>
-                    <input type="number" id="years" placeholder="Number of years"><br><br>
-                    <input type="submit" value="Calculate"> 
-                </form>
-                </div>
-                <div class = "col-lg-6 md-4 sl-2" >
-                    <p id="amount"></p>
-                    <p id="int"></p>
-                    <p id="total"></p>
-                    <p id="down"></p>
-                    <p id="month"></p>
-                    <p id="pay"></p>
-                </div>
-            </div>
+    <style>
+      * {
+        font-size: 10px;
+      }
+      .box {
+        border: 2px solid black;
+        width: 1000px;
+        margin: 20px auto;
+        padding: 20px 50px;
+      }
+      .alignment {
+        width: 400px;
+        margin: 3px;
+        padding: 0;
+        /* border: 2px solid black; */
+      }
+      .alignment2 {
+        width: 700px;
+        margin: 0;
+        padding: 0;
+      }
+      .center {
+        float: right;
+        margin-right: 50px;
+      }
+      .right {
+        float: right;
+      }
+      .right_bold {
+        float: right;
+        font-weight: bold;
+      }
+      .underline {
+        border-bottom: 2px solid black;
+        margin: 0px 200px;
+        width: 200px;
+      }
+      h3 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+      table {
+        margin-left: 10%;
+      }
+      table,
+      th,
+      td {
+        border: 2px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <form name="myForm" onsubmit="validate();return false ">
+            <label>Down Payment</label><br />
+            <input type="number" id="downPayment" /><br />
+            <label>Payment Terms</label><br />
+            <input
+              type="number"
+              id="years"
+              placeholder="Number of years"
+            /><br /><br />
+            <input type="submit" value="Calculate" />
+            <button onclick="window.print()">Print</button>
+          </form>
         </div>
-    
-</body>
-<script>
-    function validate(){
-        var price = Number(document.forms["myForm"]["price"].value);
-        var downPayment = document.forms["myForm"]["downPayment"].value;
-        var interest = document.forms["myForm"]["interest"].value;
-        var years = document.forms["myForm"]["years"].value;
+      </div>
+    </div>
 
-        let decimalInt = (interest/100);
-        let percent =(price * decimalInt);
-        let total = (price + percent);
-        let initialAmount = ((percent + price)-downPayment);
-        let monthly = (initialAmount/(years*12));
-        let pay = monthly.toFixed(2);
-        
-        console.log(initialAmount)
-        console.log(percent)
-        console.log(pay)
+    <div class="box">
+      <h3>SAMPLE COMPUTATION SHEET</h3>
+      <div class="underline"></div>
+      <div class="alignment">
+        PROJECT:
+        <span class="right" style="margin-right: 50px">SOLANO HILLS</span>
+      </div>
+      <div class="underline"></div>
+      <div class="alignment">
+        UNIT:<span class="right" style="margin-right: 70px">1604 typical</span>
+      </div>
+      <div class="underline"></div>
 
-        document.getElementById("amount").innerHTML = "Property Amount: " + price;
-        document.getElementById("int").innerHTML = "Interest: " +interest+ "%" +" off " + price +" = " + percent;
-        document.getElementById("total").innerHTML = "Total Amount: " + total;
-        document.getElementById("down").innerHTML = "Less downpayment: " + initialAmount;
-        document.getElementById("pay").innerHTML = "Monthly Payment for "+ years +"years = <b>" + pay +"</b>";
+      <div class="alignment">
+        <div class="bold">
+          TOTAL SELLING PRICE:(PHP)<span class="right">2,000,00.00</span>
+        </div>
+
+        <h4>PAYMENT OPTIONS (PhP)</h4>
+        <div>TOTAL SELLING PRICE: <span class="right">2,000,000.00</span></div>
+        <div>
+          LESS DOWN PAYMENT:
+          <span class="right" id="reservation">15,000.00</span>
+        </div>
+        <div class="underline"></div>
+        <div>
+          TOTAL CONTACT PRICE:
+          <span class="right_bold" id="less">1,480,000.00</span>
+        </div>
+      </div>
+      <div class="alignment">
+        <h4>CASH PAYMENT</h4>
+        <div>
+          TOTAL CONTRACT PRICE:
+          <span class="right_bold" id="contract">1,480,000.00</span>
+        </div>
+        <div>
+          LESS 5% DISCOUNT
+          <span class="right_bold" id="discount">74,000.00</span>
+        </div>
+        <div class="underline"></div>
+        <div>
+          CASH PRICE <span class="right_bold" id="totalPay">1,406,000.00</span>
+        </div>
+        <div class="underline"></div>
+      </div>
+
+      <div class="alignment">
+        <h4>DEFERRED CASH PAYMENT</h4>
+        <div>
+          TOTAL CONTRACT PRICE: <span class="right_bold">2,000,000.00</span>
+        </div>
+        <div>
+          <span id="year">12 MONTHS TO PAY 123,333.33 (0% INTEREST RATE)</span>
+        </div>
+      </div>
+
+      <div class="alignment">
+        <h4 style="width: 850px">
+          HDMF (Pag-IBIG)PAYMENT(Computation for maximum loan value, loan value
+          may change subject to buyer's capability)
+        </h4>
+        <div>
+          TOTAL CONTRACT PRICE: <span class="right_bold">1,480,000.00</span>
+        </div>
+        <div>
+          ESTIMATED LOAN VALUE: <span class="right_bold">1,270,000.00</span>
+        </div>
+        <div>DOWNPAYMENT: <span class="right_bold">210,000.00</span></div>
+      </div>
+
+      <div class="alignment2">
+        <h4>A. DOWNPAYMENT OPTIONS</h4>
+        <div>
+          SPOT DOWNPAYMENT
+          <span class="right"
+            >205,800.00 (LESS 2% DISCOUNT FOR SPOT DP - 30 DAYS)</span
+          >
+        </div>
+        <div>
+          INSTALLMENT BASIS<span class="right"
+            >17,500.00 (12MONTHS @ 0% INTEREST)</span
+          >
+        </div>
+      </div>
+      <h4>B. LOAN VALUE MONTHLY AMORTIZATION (MA) OPTIONS(PhP/mo.)</h4>
+      <table style="width: 80%">
+        <tr>
+          <th>YEAR TERMS</th>
+          <th>MONTHLY AMORTIZATION</th>
+          <th>GROSS INCOME</th>
+        </tr>
+        <tr>
+          <td>30 YEARS</td>
+          <td>9.697.26</td>
+          <td>32,324.21</td>
+        </tr>
+        <tr>
+          <td>25 YEARS</td>
+          <td>10,245.13</td>
+          <td>34,150.43</td>
+        </tr>
+        <tr>
+          <td>20 YEARS</td>
+          <td>11,138.78</td>
+          <td>37,129.26</td>
+        </tr>
+        <tr>
+          <td>15 YEARS</td>
+          <td>12,733.06</td>
+          <td>42,443.53</td>
+        </tr>
+        <tr>
+          <td>10 YEARS</td>
+          <td>16,090.60</td>
+          <td>53,635.32</td>
+        </tr>
+        <tr>
+          <td>5 YEARS</td>
+          <td>26,519.01</td>
+          <td>88,396.70</td>
+        </tr>
+      </table>
+
+      <div class="alignment">
+        <h4>IN-HOUSE FINANCING OPTIONS</h4>
+        <div>
+          TOTAL CONTRACT PRICE: <span class="right_bold">1,480,000.00</span>
+        </div>
+        <div>50% DOWNPAYMENT: <span class="right_bold">740,000.00</span></div>
+        <div>
+          ESTIMATED LOAN VALUE: <span class="right_bold">740,000.00</span>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function validate() {
+      var price = Number(document.forms["myForm"]["price"].value);
+      var downPayment = document.forms["myForm"]["downPayment"].value;
+      var interest = document.forms["myForm"]["interest"].value;
+      var years = document.forms["myForm"]["years"].value;
+      var commas = downPayment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      let decimalInt = interest / 100;
+      let percent = price * decimalInt;
+      let total = price + percent;
+      let initialAmount = percent + price - downPayment;
+      let year = years * 12;
+      let monthly = 2000000 / year;
+      let pay = monthly.toFixed(2);
+      let less = 2000000 - downPayment;
+      let lessForm = less.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      let discount = less * 0.05;
+      let lessDiscount = discount
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      let totalPay = (less - discount)
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      document.getElementById("discount").innerHTML = lessDiscount + ".00";
+      document.getElementById("contract").innerHTML = lessForm + ".00";
+      document.getElementById("less").innerHTML = lessForm + ".00";
+      document.getElementById("reservation").innerHTML = commas + ".00";
+      document.getElementById("totalPay").innerHTML = totalPay + ".00";
+      document.getElementById("year").innerHTML =
+        year +
+        " MONTHS TO PAY </span> <span class='right_bold'> " +
+        monthly +
+        " (0% INTEREST RATE)</span>";
+
       return false;
     }
-</script>
+  </script>
+
+  <div
+    class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn"
+    data-wow-delay="0.1s"
+  >
+    <div class="container-fluid py-5 tex pl-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white mb-4">Get In Touch</h5>
+          <p class="mb-2">
+            <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+          </p>
+          <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+          <p class="mb-2">
+            <i class="fa fa-envelope me-3"></i>info@example.com
+          </p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href=""
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-outline-light btn-social" href=""
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-outline-light btn-social" href=""
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a class="btn btn-outline-light btn-social" href=""
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </html>
-
-
-
