@@ -232,9 +232,8 @@
                   <div class="modal-body">
                     <form
                       id="form"
-                      method="post"
                       name="form"
-                      onsubmit="return validated()"
+                      onsubmit="validated();return false"
                     >
                       <h5 class="modal-title">Register here</h5>
                       <div class="form">
@@ -243,8 +242,13 @@
                           ><br />
                           <input
                             type="text"
-                            id="fname"
+                            id="fname" id="#inputsign"
                             placeholder="ex John"
+                            style="  width: 80%;
+                            border-radius:5px;
+                            border: 2px solid #00B98E;
+                            padding: 20px;
+                            height: 20px;"
                             required
                           />
                           <div class="error"></div>
@@ -257,6 +261,11 @@
                             id="lname"
                             placeholder="ex Smith"
                             required
+                            style="  width: 80%;
+                            border-radius:5px;
+                            border: 2px solid #00B98E;
+                            padding: 20px;
+                            height: 20px;"
                           />
                           <div class="error"></div>
                         </div>
@@ -267,6 +276,11 @@
                             id="email"
                             placeholder="Enter Email"
                             required
+                            style="  width: 80%;
+                            border-radius:5px;
+                            border: 2px solid #00B98E;
+                            padding: 20px;
+                            height: 20px;"
                           />
                           <div class="error"></div>
                         </div>
@@ -278,6 +292,11 @@
                             id="mobileNumber"
                             placeholder="090912345678"
                             required
+                            style="  width: 80%;
+                            border-radius:5px;
+                            border: 2px solid #00B98E;
+                            padding: 20px;
+                            height: 20px;"
                           />
                           <div class="error"></div>
                         </div>
@@ -288,6 +307,11 @@
                             type="password"
                             id="password"
                             placeholder="min 8 characters"
+                            style="  width: 80%;
+                            border-radius:5px;
+                            border: 2px solid #00B98E;
+                            padding: 20px;
+                            height: 20px;"
                           />
                           <div class="error"></div>
                         </div>
@@ -295,17 +319,20 @@
                           <label for="password" id="color"
                             >Confirm Password</label
                           ><br />
-                          <input type="password" id="password2" />
+                          <input type="password" id="password2" style="  width: 80%;
+                          border-radius:5px;
+                          border: 2px solid #00B98E;
+                          padding: 20px;
+                          height: 20px;" required/>
                           <div class="error"></div>
                         </div>
                         <div class="pt-2">
-                          <button
+                          <input
                             type="submit"
                             class="btn btn-primary"
                             id="signup"
-                          >
-                            Submit
-                          </button>
+                            value="submit"
+                          >  
                         </div>
                         <div class="form-element"></div>
                         <div class="form-element">
