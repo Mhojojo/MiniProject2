@@ -91,20 +91,31 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container pt-5 text-center" >
       <div class="row">
-        <div class="col-lg-4">
-          <form name="myForm" onsubmit="validate();return false ">
-            <label>Down Payment</label><br />
-            <input type="number" id="downPayment" /><br />
-            <label>Payment Terms</label><br />
+        <div class="col-lg-12">
+          <form name="myForm" onclick=" validate(); return false">
+            <input
+              type="number"
+              id="downPayment"
+              class="border-1 w-30 py-2"
+              placeholder="Down payment"
+            />
             <input
               type="number"
               id="years"
               placeholder="Number of years"
-            /><br /><br />
-            <input type="submit" value="Calculate" />
-            <button onclick="window.print()">Print</button>
+              class="border-1 w-30 py-2"
+            /><br /></br>
+
+            <input
+              type="submit"
+              value="Calculate"
+              class="btn btn-primary w-30 py-2"
+            />
+            <button onclick="window.print()" class="btn btn-primary w-30 py-2">
+              Print
+            </button>
           </form>
         </div>
       </div>
@@ -249,15 +260,9 @@
 
   <script>
     function validate() {
-      var price = Number(document.forms["myForm"]["price"].value);
       var downPayment = document.forms["myForm"]["downPayment"].value;
-      var interest = document.forms["myForm"]["interest"].value;
       var years = document.forms["myForm"]["years"].value;
       var commas = downPayment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      let decimalInt = interest / 100;
-      let percent = price * decimalInt;
-      let total = price + percent;
-      let initialAmount = percent + price - downPayment;
       let year = years * 12;
       let monthly = 2000000 / year;
       let pay = monthly.toFixed(2);
@@ -271,10 +276,10 @@
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+      document.getElementById("reservation").innerHTML = commas + ".00";
       document.getElementById("discount").innerHTML = lessDiscount + ".00";
       document.getElementById("contract").innerHTML = lessForm + ".00";
       document.getElementById("less").innerHTML = lessForm + ".00";
-      document.getElementById("reservation").innerHTML = commas + ".00";
       document.getElementById("totalPay").innerHTML = totalPay + ".00";
       document.getElementById("year").innerHTML =
         year +
