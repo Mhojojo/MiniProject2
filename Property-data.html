@@ -16,13 +16,13 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   </head>
 <style>
-  img{
+  #img{
     width:100%
   }
   .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 20%;
+  width: 10%;
 }
 
 .card:hover {
@@ -90,10 +90,21 @@ function show(){
   var y = document.getElementById("type").value;
   var z = document.getElementById("location").value;
 
+  console.log(x,y,z);
 
   const results = property.filter(element => {
-
-  return element.type === y && element.status === x && element.city === z;
+    if(x==="0"){
+      return element.type === y && element.city === z;
+    }
+    else if(y==="0" && z==="0"){
+      return element.status === x;
+    }
+    else if(x==="0" && y==="0"){
+      return element.city === z;
+    }
+    else if (x!=="0"&& y!=="0" && z !=="0") {
+    return element.type === y && element.status === x && element.city === z;
+    }
 });
 
 for (i = 0; i < results.length; i++) {
@@ -115,8 +126,6 @@ cardHtml = `
     
    </div>   
 `;
-
-
 cardsContainer.appendChild(newCard);
 newCard.innerHTML = cardHtml;
 
@@ -135,14 +144,15 @@ newCard.innerHTML = cardHtml;
         <div class="row g-2">
           <div class="col-md-4">
             <form name="form">
-            <select id="status" class="form-select border-0 py-3" onchange="show()">
-              <option selected value="Sale">For Sale</option>
+            <select id="status" class="form-select border-0 py-3" onchange="show();">
+              <option selected value="0">Availability</option>
+              <option value="Sale">For Sale</option>
               <option value="Rent">For Rent</option>
             </select>
           </div>
           <div class="col-md-4">
             <select id= "type" class="form-select border-0 py-3">
-              <option selected>Property Type</option>
+              <option selected value="0">Property Type</option>
               <option value="House">House</option>
               <option value="Villa">Villa</option>
               <option value="Office">Office</option>
@@ -150,7 +160,7 @@ newCard.innerHTML = cardHtml;
           </div>
           <div class="col-md-4">
             <select id="location" class="form-select border-0 py-3">
-              <option selected>Location</option>
+              <option selected value="0">Location</option>
               <option value="New York">New York</option>
               <option value="South Dakota">South Dakota</option>
               <option value="Miami">Miami</option>
