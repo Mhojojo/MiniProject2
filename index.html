@@ -38,6 +38,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/log-in-page.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -121,11 +122,71 @@
               </div>
               <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
-            <a
-              href="log-in-page.html"
-              class="btn btn-primary px-3 d-none d-lg-flex"
-              >Log-in</a
+
+            <!-- Log-in Start -->
+
+            <button
+              class="btn btn-primary mx-1"
+              onclick="document.getElementById('id01').style.display='block'"
+              style="width: auto"
             >
+              Login
+            </button>
+
+            <div id="id01" class="modal1">
+              <form
+                class="modal-content1 animate1"
+                action="/action_page.php"
+                method="post"
+              >
+                <div class="imgcontainer1">
+                  <span
+                    onclick="document.getElementById('id01').style.display='none'"
+                    class="close1"
+                    title="Close Modal"
+                    >&times;</span
+                  >
+                  <img src="img\logo.png" alt="" class="avatar1" />
+                </div>
+
+                <div class="container1">
+                  <label for="uname"><b>Username</b></label>
+                  <input
+                    type="text"
+                    placeholder="Enter Username"
+                    name="uname"
+                    required
+                  />
+
+                  <label for="psw"><b>Password</b></label>
+                  <input
+                    type="password"
+                    placeholder="Enter Password"
+                    name="psw"
+                    required
+                  />
+
+                  <button class="btn btn-primary" type="submit">Login</button>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember" />
+                    Remember me
+                  </label>
+                </div>
+
+                <div class="container1" style="background-color: #f1f1f1">
+                  <button
+                    type="button"
+                    onclick="document.getElementById('id01').style.display='none'"
+                    class="btn btn-primary mx-1"
+                  >
+                    Cancel
+                  </button>
+                  <span class="psw1"><a href="#">Forgot password?</a></span>
+                </div>
+              </form>
+            </div>
+
+            <!-- Log-in End -->
           </div>
         </nav>
       </div>
@@ -2544,5 +2605,6 @@
     <script src="js/main.js"></script>
     <script src="js\index.js"></script>
     <script src="js\featured.js"></script>
+    <script src="js\log-in-page.js"></script>
   </body>
 </html>
