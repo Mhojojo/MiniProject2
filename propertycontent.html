@@ -72,6 +72,51 @@
         #myUL li a:hover:not(.header) {
           background-color: #eee;
         }
+       
+    .photo-gallery {
+  color:#313437;
+  background-color:#fff;
+}
+
+.photo-gallery p {
+  color:#7d8285;
+}
+
+.photo-gallery h2 {
+  font-weight:bold;
+  margin-bottom:40px;
+  padding-top:40px;
+  color:inherit;
+}
+
+@media (max-width:767px) {
+  .photo-gallery h2 {
+    margin-bottom:25px;
+    padding-top:25px;
+    font-size:24px;
+  }
+}
+
+.photo-gallery .intro {
+  font-size:16px;
+  max-width:500px;
+  margin:0 auto 40px;
+}
+
+.photo-gallery .intro p {
+  margin-bottom:0;
+}
+
+.photo-gallery .photos {
+  padding-bottom:20px;
+}
+
+.photo-gallery .item {
+  padding-bottom:30px;
+}
+
+
+  </style>
       </style>
       <script>
 
@@ -93,6 +138,30 @@
         }
   
         
+        function update(){
+            var desc = document.forms["propForm"]["desc"].value;
+            var floor = document.forms["propForm"]["floor"].value;
+            var loc = document.forms["propForm"]["loc"].value;
+
+            document.getElementById("propDesc").innerHTML = desc;
+            document.getElementById("floorDesc").innerHTML = floor;
+            document.getElementById("locDesc").innerHTML = loc;
+        }
+
+        const renderFile = () => {
+  const render = document.querySelector('img')
+  const file = document.querySelector('input[type=file]').files[0]
+  const reader = new FileReader();
+  
+  
+  reader.addEventListener('load' , ()=> {
+    render.src = reader.result;
+  }, false)
+
+  if(file){
+    reader.readAsDataURL(file);
+  }
+}
       </script>
   </head>
 
@@ -142,25 +211,8 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto">
               <a href="index.html" class="nav-item nav-link active">Home</a>
-              <a href="about.html" class="nav-item nav-link">Clients</a>
-              <div class="nav-item dropdown">
-                <a
-                  href="#"
-                  class="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  >Page Management</a
-                >
-                <div class="dropdown-menu rounded-0 m-0">
-                  <a href="property-list.html" class="dropdown-item"
-                    >Update Property List</a
-                  >
-                  <a href="property-type.html" class="dropdown-item"
-                    >Update Property Content</a
-                  >
-                  <a href="property-agent.html" class="dropdown-item">Agents</a>
-                </div>
-              </div>
-
+              <a href="client.html" class="nav-item nav-link">Clients</a>
+              <a href="updateproperty.html" class="nav-item nav-link">Update Content</a>
               <a href="about.html" class="nav-item nav-link">Add Property</a>
               <a href="contact.html" class="nav-item nav-link">Sign Out</a>
             </div>
@@ -185,32 +237,83 @@
      <div class="container">
         <div class="row pb-5">
             <div class="col-lg-4">
-                <h3 class="text-center">Seaview Hills Luxury</h3>
+      
             </div>
         </div>
         <div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form id="propForm">
+
+                    <form name="propForm" onsubmit="update();return false">
                         <label class="text-dark"><b>Brief Description</b></label><br>
                         <input style="width:1300px;height:150px;"  type="text" id="desc" placeholder="This luxury home is waiting for you to enjoy the million dollar views and peaceful desert lifestyle"><br><br>
 
                         <label class="text-dark"><b>Floor Plan Description</b></label><br>
-                        <input style="width:1300px ;height:150px"  type="text" id="desc" placeholder="Custom features are at every turn from the 36'' Viking range, cement countertops, high end appliances and hand forged sinks........"><br><br>
+                        <input style="width:1300px ;height:150px"  type="text" id="floor" placeholder="Custom features are at every turn from the 36'' Viking range, cement countertops, high end appliances and hand forged sinks........"><br><br>
 
                         <label class="text-dark"><b>Location Description</b></label><br>
-                        <input style="width:1300px ;height:150px"  type="text" id="desc" placeholder="One of a kind Southwestern paradise on almost 4 acres with 360 degree views of the Catalinas and Tucson cityscape........."><br><br>
+                        <input style="width:1300px ;height:150px"  type="text" id="loc" placeholder="One of a kind Southwestern paradise on almost 4 acres with 360 degree views of the Catalinas and Tucson cityscape........."><br><br>
                         
-                        <label class="text-dark"><b>Upload image for Floor Plan</b></label> <input type="file" id="" name="filename">
+                        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                        <p><label for="file" style="cursor: pointer;" >Click here to upload file</label></p>
+                       
 
+                        <script>
+                        var loadFile = function(event) {
+	                    var image = document.getElementById('output');
+	                    image.src = URL.createObjectURL(event.target.files[0]);
+                        };
+                        </script>
+                        
+                         <input type="submit" value="Submit" />
                     </form>
                 </div>
             </div>
 
         </div>
      </div>
+<!-- ----------------------content start-------------------------- -->
+<div class="photo-gallery">
+    <div class="container">
+        <div class="intro">
+         
+            <p id="propDesc" class="text-center">Make yourself at home in our cosy, modern apartment in Makati and within walking distance from all major sights. </p>
+        </div>
+        <div class="row photos text-center">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-5">
+            <p style="text-align:center"><img id="output" width ="80px" /></p>
+          </div>
+    </div>
+</div>
 
 
+<div class="container">
+<div class="row">
+<div class = col-6>
+  <img id="floorImg" class="img-fluid" src="img/apfloorplan.png">
+</div>
+<div class = "col-6 pt-5">
+  <h3 class="text-primary mb-3"> Floor Plan </h3>
+  <p id="floorDesc" class = "text-dark">The apartment consists of a large bright bedroom with a comfy king-sized bed, a modern fully-equipped kitchen and a sunlit living room with Apple TV and free Netflix account. It is the perfect place to stay for couples looking for a romantic location in the historic centre, within walking distance of some of the most beautiful sceneries you can find in the city and all famous landmarks. The sofa in the living room can also serve as an additional bed for a 3rd guest.  </p>
+</div>
+</div>
+<div class="container pt-5">
+<div class="row">
+<div class = "col-6 pt-5">
+  <h3 class="text-primary mb-3"> Location </h3>
+  <p id="locDesc" class ="text-dark"> This romantic apartment is perfectly suited for business trip, couple or couple with children. Located in the strong central area includes a cozy studio equiped with nice sofa and queen bed, also there is fully equiped kitchen. Excellent WIFI network. </p>
+  <p id="locAdd" class ="text-dark"> 123 Street, Makati City</p>
+</div>
+<div class = "col-6 pt-5">
+  <!-- <div id="locGoogle"></div> -->
+  <iframe id="locGoogle" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15447.697853163621!2d121.02903002678815!3d14.546312137391752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8fd1675787b%3A0x37729704b8460a64!2sForbes%20Park%2C%20Makati%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1666140533186!5m2!1sen!2sph" width="650" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> 
+  </iframe>
+</div>
+</div>
+</div>
+</div>
+<!-- ----------------content ends heres--------------------------- -->
 
 
 

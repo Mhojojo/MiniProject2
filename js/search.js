@@ -1,22 +1,6 @@
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Makaan - Real Estate HTML Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
 
-   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  </head>
-<script>
-  const property = [
+    const property = [
 {  
     type: "Villa", 
     name:"Lifestyle International Realty", 
@@ -123,61 +107,3 @@ newCard.innerHTML = cardHtml;
 }
 
 }
-</script>
-
-</head>
-<body>
-  <!-- Search Start -->
-  <div
-  class="container-fluid bg-primary mb-5 wow fadeIn"
-  data-wow-delay="0.1s"
-  style="padding: 35px"
->
-  <div class="container">
-    <div class="row g-2">
-      <div class="col-md-10">
-        <div class="row g-2">
-          <div class="col-md-4">
-            <select id="status" class="form-select border-0 py-3">
-              <option selected value="0">Availability</option>
-              <option value="For Sale">For Sale</option>
-              <option value="For Rent">For Rent</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <select id="type" class="form-select border-0 py-3">
-              <option selected value="0">Property Type</option>
-              <option value="House">House</option>
-              <option value="Villa">Villa</option>
-              <option value="Office">Office</option>
-              <option value="Condominium">Condominium</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <select id="location" class="form-select border-0 py-3">
-              <option selected value="0">Location</option>
-              <option value="Makati">Makati</option>
-              <option value="Taguig">Taguig</option>
-              <option value="Pasig">Pasig</option>
-              <option value="Marikina">Marikina</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <button onclick="show()" class="btn btn-dark border-0 w-100 py-3">
-          Search
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- --------search content-------------- -->
-<card class="card">
-  <div class="container" id="products-cards-container">
-  </div>
-</card>
-</body>
-</html>
-
-

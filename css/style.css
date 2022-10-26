@@ -439,3 +439,15 @@
     border-right: none;
 }
 
+img{
+    width:100%
+  }
+  .card {
+  width: 45%;
+  border-color: white;
+}
+
+.container {
+  padding: 2px 16px;
+  border-color: rgb(0, 0, 0);
+}
