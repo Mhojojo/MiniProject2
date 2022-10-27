@@ -1,4 +1,4 @@
-#inputsign {
+/* #inputsign {
   width: 80%;
   border-radius:5px;
   border: 2px solid #00B98E;
@@ -6,7 +6,7 @@
   height: 20px;
 }
 form{
-  padding-left:70px;
+ style: "padding-left:70px";
 }
 #signup{
   width: 80%;
@@ -14,4 +14,4 @@ form{
 #color{
   color: #0E2E50;
   
-}
+} */
