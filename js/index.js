@@ -52,3 +52,7 @@ function typeTownhouseIndex() {
   location.href = "property-type.html";
   localStorage.setItem("text", "typeTownhouse");
 }
+
+function newsletter () {
+  alert("Thank you for subscribing!")
+}
