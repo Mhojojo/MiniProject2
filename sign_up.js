@@ -1,3 +1,5 @@
+const { func } = require("joi");
+
 function checkfirstName(name) {
   var valid = true;
   if (name == "") {
@@ -36,45 +38,55 @@ function checkPassword(password){
         alert("Should have atleast 8 characters");
         passValid = false;
          } 
-  return false;
+  return passValid;
 }
 
 function checkPhone(mobile){
   var phoneValid = true;
+  var x =false
 
-  let testPhone = containsAnyLetters(input_str);
+  let testPhone = containsAnyLetters(mobile);
   if(testPhone){
     alert("Please enter a valid Phone Number")
     phoneValid = false;
     return false;
   }
-  return phoneValid
+  return phoneValid;
+  
 }
 
 
 function validated() {
+ 
   var fname = document.forms["form"]["fname"].value;
   var lname = document.forms["form"]["lname"].value;
   var mobile = document.forms["form"]["mobileNumber"].value;
   var pass1 = document.forms["form"]["password"].value;
   var pass2 = document.forms["form"]["password2"].value;
+  var mail = document.forms["form"]["email1"].value;
 
 
-  checkfirstName(fname);
-  checkfirstName(lname);
-  checkPassword(password);
-  validatePhoneNumber(mobile);
+ var isNameValid= checkfirstName(fname);
+ var isLnameValid=checkfirstName(lname);
+ var isPassValid =checkPassword(password);
+ var isPhoneValid = checkPhone(mobile);
 
+  
+var passValid = true;
   if(pass1!=pass2){
+    passValid=false;
     alert("password does not match")
-    return false;
+  }
+
+  if (isNameValid && isLnameValid && isPassValid && isPhoneValid && passValid){
+    alert("Registration submitted for approval. Thank you! ")
+    window.location.href="index.html"
+  
   }
 
 
 
-  alert(phoneValid)
-
-
 }
+
 
 
